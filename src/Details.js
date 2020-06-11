@@ -1,10 +1,11 @@
-import React from "react";
+import React, { lazy } from "react";
 import pet from "@frontendmasters/pet";
 import { navigate } from "@reach/router";
-import Modal from "./Modal";
 import Carousel from "./Carousel";
 import ErrorBoundary from "./ErrorBoundary";
 import ThemeContext from "./ThemeContext";
+
+const Modal = lazy(() => import("./Modal"));
 
 class Details extends React.Component {
   state = { loading: true, showModal: false };
@@ -19,7 +20,7 @@ class Details extends React.Component {
         description: animal.description,
         media: animal.photos,
         breed: animal.breeds.primary,
-        loading: false
+        loading: false,
       });
     }, console.error);
   }
@@ -40,7 +41,7 @@ class Details extends React.Component {
       description,
       name,
       media,
-      showModal
+      showModal,
     } = this.state;
 
     return (
