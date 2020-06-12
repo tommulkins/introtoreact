@@ -1,7 +1,6 @@
-/** @jsx jsx */
 import React from "react";
 import { Link } from "@reach/router";
-import { css, jsx } from "@emotion/core";
+import { css } from "@emotion/core";
 
 const color = "pink";
 
